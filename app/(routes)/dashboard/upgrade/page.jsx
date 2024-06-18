@@ -3,8 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Đăng Ký Premium',
-  description: 'Đăng Ký Premium',
+  title: 'Finly - Đăng Ký Premium',
+  description: 'Finly - Đăng Ký Premium',
 }
 
 function Upgrade() {

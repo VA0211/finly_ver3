@@ -2,8 +2,8 @@ import React from 'react'
 import ExpensePage from './_components/ExpensePage'
 
 export const metadata = {
-  title: 'Chi Tiêu',
-  description: 'Chi Tiêu',
+  title: 'Finly - Chi Tiêu',
+  description: 'Finly - Chi Tiêu',
 }
 
 function ExpenseMainPage() {

@@ -2,8 +2,8 @@ import React from 'react'
 import IncomeList from './_components/IncomeList'
 
 export const metadata = {
-  title: 'Thu Nhập',
-  description: 'Thu Nhập',
+  title: 'Finly - Thu Nhập',
+  description: 'Finly - Thu Nhập',
 }
 
 function IncomesPage() {

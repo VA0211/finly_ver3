@@ -2,8 +2,8 @@ import React from 'react'
 import BudgetList from './_components/BudgetList'
 
 export const metadata = {
-  title: 'Budget',
-  description: 'Budget',
+  title: 'Finly - Budget',
+  description: 'Finly - Budget',
 }
 
 function Budget() {
