@@ -1,6 +1,11 @@
 import React from 'react'
 import BudgetList from './_components/BudgetList'
 
+export const metadata = {
+  title: 'Budget',
+  description: 'Budget',
+}
+
 function Budget() {
   return (
     <div className='p-10'>

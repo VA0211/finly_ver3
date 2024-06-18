@@ -34,9 +34,11 @@ function IncomeCard({incomeList}) {
         </div>
     </div>
     :
-    <div className='mt-7 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+    <div className='mt-7 grid'>
         {[1].map((item, index)=>(
-            <div className='h-[120px] w-full bg-slate-200 animate-pulse rounded-lg'></div>
+            <div className='h-[150px] w-full bg-slate-200 animate-pulse rounded-lg flex items-center justify-center'>
+                <h2>Hãy thêm thu nhập để hiển thị tổng thu nhập</h2>
+            </div>
         ))}
     </div>
     }

@@ -33,7 +33,7 @@ function SideNav() {
         },
         {
             id:5,
-            name:'Upgrade',
+            name:'Đăng ký Premium',
             icon:ShieldCheck,
             path:'/dashboard/upgrade'
         }
