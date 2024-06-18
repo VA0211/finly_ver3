@@ -5,6 +5,7 @@ function ProgressBar({ budgetList, incomeList, expenseList }) {
     const [totalIncome, setTotalIncome] = useState(0);
     const [totalBudget, setTotalBudget] = useState(0);
     const [totalExpense, setTotalExpense] = useState(0);
+    const [countExpense, setCountExpense] = useState(0);
 
     useEffect(() => {
         incomeList && CalculateTotalIncome();
@@ -31,10 +32,13 @@ function ProgressBar({ budgetList, incomeList, expenseList }) {
 
     const CalculateTotalExpense = () => {
         let totalExpense_ = 0;
+        let countExpense_ = 0;
         expenseList.forEach(element => {
-            totalExpense_ = totalExpense_ + Number(element.amount)
+            totalExpense_ = totalExpense_ + Number(element.amount);
+            countExpense_++;
         });
         setTotalExpense(totalExpense_);
+        setCountExpense(countExpense_);
     }
 
     const calculateBudgetPerc = () => {
@@ -52,7 +56,7 @@ function ProgressBar({ budgetList, incomeList, expenseList }) {
             <div className='flex gap-2 items-center justify-between'>
                 <div className='grid gap-2 items-center'>
                     <h2 className='font-bold text-lg'>Tổng Thu Nhập</h2>
-                    <h2 className='text-sm text-gray-500'>100 Khoản Chi</h2>
+                    <h2 className='text-sm text-gray-500'>{countExpense} Khoản Chi</h2>
                 </div>
                 <h2 className='font-bold text-primary text-lg'>
                     {parseFloat(totalIncome).toLocaleString()} VND
@@ -65,10 +69,9 @@ function ProgressBar({ budgetList, incomeList, expenseList }) {
                 </div>
                 <div className='w-full bg-slate-300 h-2 rounded-full'>
                     <div
-                        className="h-2 rounded-full"
+                        className={`h-2 rounded-full ${calculateExpensePerc() > 80 ? 'bg-red-500' : 'bg-primary'}`}
                         style={{
                             width: `${Math.min(calculateExpensePerc(), 100)}%`,
-                            backgroundColor: calculateExpensePerc() > 80 ? 'red' : 'primary',
                         }}
                     />
                 </div>
@@ -80,10 +83,9 @@ function ProgressBar({ budgetList, incomeList, expenseList }) {
                 </div>
                 <div className='w-full bg-slate-300 h-2 rounded-full'>
                     <div
-                        className="h-2 rounded-full"
+                        className={`h-2 rounded-full ${calculateBudgetPerc() > 80 ? 'bg-red-500' : 'bg-primary'}`}
                         style={{
-                            width: `${Math.min(calculateBudgetPerc(), 100)}%`,
-                            backgroundColor: calculateBudgetPerc() > 80 ? 'red' : 'primary',
+                            width: `${Math.min(calculateBudgetPerc(), 100)}%`
                         }}
                     />
                 </div>
