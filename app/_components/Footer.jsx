@@ -27,7 +27,7 @@ function Footer() {
 
                 <div className="p-5">
                     <ul>
-                        <p className="text-gray-800 font-bold text-2xl pb-4">Hỗ trợ</p>
+                        <p className="text-gray-800 font-bold text-2xl pb-4">Liên Hệ</p>
                         <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
                             <Link href={'https://www.facebook.com/profile.php?id=61559605455726&mibextid=ZbWKwL'}
                                 className="hover:text-blue-700"> Facebook </Link>
@@ -35,6 +35,13 @@ function Footer() {
                         <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
                             <Link href={'mailto:finly.fpt.vn@gmail.com'}
                                 className="hover:text-blue-700"> Email </Link>
+                        </li>
+                    </ul>
+                    <ul>
+                        <p className="text-gray-800 font-bold text-2xl pb-4">Phản Hồi</p>
+                        <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
+                            <Link href={'https://www.facebook.com/profile.php?id=61559605455726&sk=reviews'}
+                                className="hover:text-blue-700"> Đánh Giá / Góp Ý</Link>
                         </li>
                     </ul>
                 </div>

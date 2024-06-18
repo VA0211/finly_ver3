@@ -8,7 +8,7 @@ function DashboardHeader() {
     <div className='p-5 flex justify-between items-center border shadow-sm'>
       <div className='flex space-x-4 items-center ml-auto'>
         <div>
-          <Link href={'https://www.facebook.com/profile.php?id=61559605455726&mibextid=ZbWKwL'}>
+          <Link href={'https://www.facebook.com/profile.php?id=61559605455726&sk=reviews'}>
             <Button>Phản Hồi/Đánh Giá</Button>
           </Link>
         </div>
