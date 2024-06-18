@@ -7,26 +7,27 @@ import { Budgets, Expenses } from '@/utils/schema'
 import ExpenseListTable from './ExpenseListTable'
 
 function ExpensePage() {
-  const {user}=useUser();
-  const[expensesList, setExpensesList]=useState([]);
+  const { user } = useUser();
+  const [expensesList, setExpensesList] = useState([]);
 
-  useEffect(()=>{
-    user&&getAllExpenses();
+  useEffect(() => {
+    user && getAllExpenses();
   }, [user])
 
   /**
    * Used to get all expenses
    */
-  const getAllExpenses=async()=>{
-    const result=await db.select({
-      id:Expenses.id,
-      name:Expenses.name,
-      amount:Expenses.amount,
-      createdAt:Expenses.createdAt
+  const getAllExpenses = async () => {
+    const result = await db.select({
+      id: Expenses.id,
+      name: Expenses.name,
+      amount: Expenses.amount,
+      createdAt: Expenses.createdAt,
+      budgetName:Budgets.name
     }).from(Budgets)
-    .rightJoin(Expenses, eq(Budgets.id, Expenses.budgetId))
-    .where(eq(Budgets.createdBy, user?.primaryEmailAddress.emailAddress))
-    .orderBy(desc(Expenses.id));
+      .fullJoin(Expenses, eq(Budgets.id, Expenses.budgetId))
+      .where(eq(Budgets.createdBy, user?.primaryEmailAddress.emailAddress))
+      .orderBy(desc(Expenses.id));
 
     setExpensesList(result);
   }
@@ -35,10 +36,10 @@ function ExpensePage() {
     <div className='p-8'>
       {/* <h2 className='font-bold text-3xl'>Xin chào, {user?.fullName}</h2>
       <p className='text-gray-500'>Đây là những chi tiêu gần đây của {user?.fullName} ✌️</p> */}
-        <ExpenseListTable
+      <ExpenseListTable
         expensesList={expensesList}
-        refreshData={()=>getAllExpenses()}
-        />
+        refreshData={() => getAllExpenses()}
+      />
     </div>
   )
 }
