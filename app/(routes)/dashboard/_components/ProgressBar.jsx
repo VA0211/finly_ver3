@@ -79,7 +79,7 @@ function ProgressBar({ budgetList, incomeList, expenseList }) {
             <div className='mt-5'>
                 <div className='flex items-center justify-between mb-3'>
                     <h2 className='text-xs text-slate-400'>Đã lên budget: {parseFloat(totalBudget ? totalBudget : 0).toLocaleString()} VND</h2>
-                    <h2 className='text-xs text-slate-400'>Còn dư: {parseFloat(totalIncome - totalExpense).toLocaleString()} VND</h2>
+                    <h2 className='text-xs text-slate-400'>Còn dư: {parseFloat(totalIncome - totalBudget).toLocaleString()} VND</h2>
                 </div>
                 <div className='w-full bg-slate-300 h-2 rounded-full'>
                     <div
